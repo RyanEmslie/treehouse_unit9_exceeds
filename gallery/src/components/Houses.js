@@ -17,7 +17,7 @@ const ResultsList = props => {
   return (
     <div>
     <hr />
-    <h1>Photos of Trees!</h1>
+    <h1>Photos of Houses!</h1>
     <div className="photo-container">
       <ul>{pics}</ul>
     </div>

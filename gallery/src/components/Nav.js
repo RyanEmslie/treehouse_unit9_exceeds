@@ -1,15 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 
 const Nav = () => (
         <nav className="main-nav">
-        <ul>
-          <li><a href='/'>Home</a></li>
-          <li><a href='/'>Tree</a></li>
-          <li><a href='/'>House</a></li>
-          <li><a href='/'>Mr. Carson</a></li>
-          <li><a href='/'>NSFW</a></li>
-        </ul>
+          <ul>
+            <li><NavLink exact to='/'>Home</NavLink></li>
+            <li><NavLink to='/results'>Results</NavLink></li>
+            <li><NavLink to='/trees'>Trees</NavLink></li>
+            <li><NavLink to='/houses'>Houses</NavLink></li>
+            <li><NavLink to='/carson'>RyanCarson</NavLink></li>
+            <li><NavLink to='/nsfw'>NSFW</NavLink></li>
+          </ul>
       </nav>
       )
-//https://thumbs.gfycat.com/ConcreteAdorableHorse-small.gif
+      
 export default Nav;

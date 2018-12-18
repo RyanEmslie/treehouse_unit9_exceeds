@@ -9,7 +9,7 @@ const ResultsList = props => {
   let pics;
 
   if (results.length > 0) {
-    pics = results.map(pic => <Results url={pic.url_s} />);
+    pics = results.map(pic => <Results key={pic.id} url={pic.url_s} />);
   } else {
     pics = <NoResults />;
   }
