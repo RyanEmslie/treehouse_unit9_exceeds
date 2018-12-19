@@ -9,15 +9,12 @@ import apiKey from "./config.js";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import Nav from "./components/Nav";
-// import Results from './components/Results';
-// import NoResults from './components/NoResults';
 import ResultsList from "./components/ResultsList";
-import Trees from "./components/Trees";
-import Carson from "./components/Carson";
 import Home from "./components/Home";
-import Houses from "./components/Houses";
 import NSFW from "./components/NSFW";
 import NoMatch from "./components/NoMatch";
+
+
 
 
 class App extends Component {
@@ -40,7 +37,6 @@ class App extends Component {
   }
 
   performSearch = (query = 'alligator') => {
-    // const tags = 'people'
     const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&per_page=24&format=json&nojsoncallback=1&tags=${query}&extras=url_s`;
     axios
       .get(url)
@@ -56,7 +52,6 @@ class App extends Component {
   };
 
   treeSearch = () => {
-    // const tags = 'people'
     const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&per_page=24&format=json&nojsoncallback=1&tags=forest&extras=url_s`;
     axios
       .get(url)
@@ -102,8 +97,6 @@ class App extends Component {
   };
 
 
-
-  
   render() {
     return (
       <BrowserRouter>
@@ -114,11 +107,11 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={ Home } />
-            <Route path="/results" render={ () => <ResultsList data={this.state.results} /> } />
-            <Route path="/trees" render={ () => <Trees data={this.state.trees} /> } />
-            <Route path="/houses" render={ () => <Houses data={this.state.houses} />} />
-            <Route path="/carson" render={ () => <Carson data={this.state.carson} />} />
-            <Route path="/nsfw" component={NSFW} />
+            <Route exact path="/results" render={ () => <ResultsList data={this.state.results} /> } />
+            <Route exact path="/trees" render={ () => <ResultsList data={this.state.trees} title={'of Trees'} />} />
+            <Route exact path="/houses" render={ () => <ResultsList data={this.state.houses} title={'of Houses'}/>} />
+            <Route exact path="/carson" render={ () => <ResultsList data={this.state.carson} title={'of Ryan Carson'}/>} />
+            <Route exact path="/nsfw" component={NSFW} />
             <Route component={NoMatch} />
           </Switch>
         </div>
@@ -128,3 +121,5 @@ class App extends Component {
 } //class App
 
 export default App;
+
+

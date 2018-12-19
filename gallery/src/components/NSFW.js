@@ -1,4 +1,3 @@
-//https://thumbs.gfycat.com/ConcreteAdorableHorse-small.gif
 import React from 'react';
 
 

@@ -1,8 +1,6 @@
 import React from "react";
-import Results from "./Results";
-import NoResults from "./NoResults";
-
-// import '../index.css';
+import Results from "../Results";
+import NoResults from "../NoResults";
 
 const ResultsList = props => {
   const results = props.data;

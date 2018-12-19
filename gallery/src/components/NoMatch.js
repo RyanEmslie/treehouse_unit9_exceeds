@@ -1,14 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 
-
-const NoMatch = () => {
-  
-
-  return (
-    <div>
-  <h1>No Match</h1>
-    </div>
-  );
-};
+class NoMatch extends Component {
+  render() {
+    return (
+      <div>
+        <img alt="not found" src={require("../images/404.png")} />
+      </div>
+    )
+  }
+}
 
 export default NoMatch;

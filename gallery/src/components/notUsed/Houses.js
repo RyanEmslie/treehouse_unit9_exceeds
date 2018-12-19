@@ -1,8 +1,7 @@
 import React from "react";
-import Results from "./Results";
-import NoResults from "./NoResults";
+import Results from "../Results";
+import NoResults from "../NoResults";
 
-// import '../index.css';
 
 const ResultsList = props => {
   const results = props.data;
@@ -16,6 +15,7 @@ const ResultsList = props => {
 
   return (
     <div>
+      console.log('houses')
     <hr />
     <h1>Photos of Houses!</h1>
     <div className="photo-container">

@@ -1,8 +1,6 @@
 import React from "react";
-import Results from "./Results";
-// import NoResults from "./NoResults";
+import Results from "../Results";
 
-// import '../index.css';
 const ResultsList = props => {
   const results = props.data;
   let pics = results.map(pic => <Results key={pic.id} url={pic.url_s} />);
