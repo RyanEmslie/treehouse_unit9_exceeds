@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="homeParagraph">
       <p>Welcome to my Flickr React App.</p>
-      <p>The app was reacted using the Reach JavaScript library</p>
+      <p>The app was created using the Reach JavaScript library</p>
       <p>
         Use the search bar to search for photos located on the Flickr database.
       </p>

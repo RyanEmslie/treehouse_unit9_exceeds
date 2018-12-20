@@ -10,3 +10,6 @@ React-router-dom is located in APP.js
 I opted to catch all of the "404" errors with a separate <Route component={NoMatch}>.  
 
 I was having issues programatically navigating to a separate route after the search form was submitted.  I ended up using {withRouter}, based on work seen on Tyler McGinnis' website as opposed to Gil's demo.
+
+The API is collected in the App component and then passed down to the ResultsList component
+The <ResultsList> component is serving as my "container" component, mapping over the search arrays.

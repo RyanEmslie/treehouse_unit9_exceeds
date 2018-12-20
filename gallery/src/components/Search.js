@@ -5,22 +5,28 @@ import { withRouter } from "react-router-dom";
 
 
 class Search extends Component {
+  
+  //state holding the input value from search bar
   state = {
     searchText: ""
   };
 
+  //state is changed dynamically as text is entered
   onSearchChange = event => {
     this.setState({
       searchText: event.target.value
     });
   };
-
+ 
+  //when form is sumbitted the state is passed back up to App component to Axios
+  //URL is programatically changed to the results page
   handleSubmit = event => {
     event.preventDefault();
     this.props.onSearch(this.state.searchText);
     event.currentTarget.reset();
     this.props.history.push("/results");
   };
+
 
   render() {
     return (
@@ -30,7 +36,7 @@ class Search extends Component {
             type="search"
             onChange={this.onSearchChange}
             name="search"
-            placeholder="Search"
+            placeholder="...Alligators"
             required
           />
           <button type="submit" className="search-button">
@@ -51,4 +57,5 @@ class Search extends Component {
   }
 }
 
+//withRouter used with programatically change URL to search results page
 export default withRouter(Search);

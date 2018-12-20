@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+
+//this component is rendered when any non-nav link url is entered
 class NoMatch extends Component {
   render() {
     return (

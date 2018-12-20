@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+//Why would you search for these pictures at work?
 const NSFW = () => (
         <div>
           <p>

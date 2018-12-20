@@ -25,6 +25,7 @@ class App extends Component {
       trees: [],
       carson: [],
       houses: [],
+      query: '',
       loading: true
     };
   }
@@ -36,7 +37,8 @@ class App extends Component {
     this.housesSearch();
   }
 
-  performSearch = (query = 'alligator') => {
+  performSearch = (query = 'Alligators') => {
+    this.setState({query: query})
     const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&per_page=24&format=json&nojsoncallback=1&tags=${query}&extras=url_s`;
     axios
       .get(url)
@@ -96,6 +98,7 @@ class App extends Component {
       });
   };
 
+  
 
   render() {
     return (
@@ -107,7 +110,7 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={ Home } />
-            <Route exact path="/results" render={ () => <ResultsList data={this.state.results} /> } />
+            <Route exact path="/results" render={ () => <ResultsList data={this.state.results} queryTitle={this.state.query} />} />
             <Route exact path="/trees" render={ () => <ResultsList data={this.state.trees} title={'of Trees'} />} />
             <Route exact path="/houses" render={ () => <ResultsList data={this.state.houses} title={'of Houses'}/>} />
             <Route exact path="/carson" render={ () => <ResultsList data={this.state.carson} title={'of Ryan Carson'}/>} />
