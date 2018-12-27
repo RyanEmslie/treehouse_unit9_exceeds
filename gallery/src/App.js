@@ -110,10 +110,27 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={ Home } />
-            <Route exact path="/results" render={ () => <ResultsList data={this.state.results} queryTitle={this.state.query} />} />
-            <Route exact path="/trees" render={ () => <ResultsList data={this.state.trees} title={'of Trees'} />} />
-            <Route exact path="/houses" render={ () => <ResultsList data={this.state.houses} title={'of Houses'}/>} />
-            <Route exact path="/carson" render={ () => <ResultsList data={this.state.carson} title={'of Ryan Carson'}/>} />
+            
+            <Route exact path="/results" render={ () => <ResultsList 
+              data={this.state.results} 
+              loadingState={this.state.loading} 
+              queryTitle={this.state.query} />} />
+            
+            <Route exact path="/trees" render={ () => <ResultsList 
+              data={this.state.trees} 
+              loadingState={this.state.loading} 
+              title={'of Trees'} />} />
+            
+            <Route exact path="/houses" render={ () => <ResultsList 
+              data={this.state.houses} 
+              loadingState={this.state.loading} 
+              title={'of Houses'}/>} />
+            
+            <Route exact path="/carson" render={ () => <ResultsList 
+              data={this.state.carson} 
+              loadingState={this.state.loading} 
+              title={'of Ryan Carson'}/>} />
+            
             <Route exact path="/nsfw" component={NSFW} />
             <Route component={NoMatch} />
           </Switch>
